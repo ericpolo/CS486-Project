@@ -1,0 +1,85 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{MarketsAndMarkets}{2017}]{marketsandmarkets2017image}
+MarketsAndMarkets
+\newblock 2017
+\newblock {\em Image Recognition Market}.
+\newblock {Retrieved From: \em https://www.marketsandmarkets.com/Market-Reports/image-recognition-market-222404611.html} 
+
+\bibitem[\protect\citeauthoryear{Adam Dachis}{2019}]{dachis2019google}
+Dachis, A.
+\newblock 2019.
+\newblock {\em Google’s EfficientNet Offers up to a 10x Boost in Image Analysis Efficiency}.
+\newblock {Retrieved From: \em https://www.extremetech.com/computing/292272-googles-efficientnet-offers-up-to-a-10x-boost-in-image-analysis-efficiency} 
+
+\bibitem[\protect\citeauthoryear{Quartz}{2017}]{quartz2017image}
+Figure 1: Quartz
+\newblock 2017
+\newblock {\em Image Recognition Using Scale Recurrent Neural Network}.
+\newblock {Retrieved From: \em https://arxiv.org/pdf/1803.09218.pdf} 
+\newblock {\em arXiv:1803.09218}
+
+\bibitem[\protect\citeauthoryear{Xiao, Rasul, Vollgraf}{2017}]{xiao2017fashion}
+Xiao, H; Rasul, K; Vollgraf, R.
+\newblock 2017.
+\newblock {\em Fashion MNIST: a Novel Image Dataset for Benchmarking Machine Learning Algorithms}.
+
+\bibitem[\protect\citeauthoryear{Hijazi, Kumar, and Rowen}{2015}]{hijazi2015using}
+Hijazi, S; Kumar, R; Rowen, C; IP Group; Cadenc
+\newblock 2015.
+\newblock {\em Using Convolutional Neural Networks for Image Recognition}.
+\newblock {\em arXiv:1708.07747}.
+
+\bibitem[\protect\citeauthoryear{Cios, Shin}{1995}]{cios1995image}
+Cios, K.; Shin, I;
+\newblock 1995.
+\newblock {\em Image Recognition Neural Network: IRNN}.
+
+\bibitem[\protect\citeauthoryear{Simonyan, Zisserman}{2015}]{simonyan2015very}
+Simonyan, K.; Zisserman, A.;
+\newblock 2015.
+\newblock {\em Very Deep Convolutional Networks for Large-Scale Image Recognition}.
+\newblock {\em arXiv:1409.1556}.
+
+\bibitem[\protect\citeauthoryear{Razavian, Azizpour, Sullivan, Carlsson}{2014}]{razavian2014cnn}
+Razavian, A~S.; Azizpour, H.; Sullivan, J.; Carlsson, S.
+\newblock 2014.
+\newblock {\em Very CNN Features off-the-shelf: an Astonishing Baseline for Recognition}.
+\newblock IEEE.
+
+\bibitem[\protect\citeauthoryear{Chen, Han, Wang, Jeng, and Fan}{2018}]{chen2018the}
+Chen, Y~N.; Han, C~C.; Wang, C~T; Jeng and Fan.
+\newblock 2018
+\newblock {\em The Application of a Convolutional Neural Network on Face and License Plate Detection}.
+\newblock IEEE.
+
+\bibitem[\protect\citeauthoryear{Lo, Chan, Lin, Li, Freedman, Mun}{1995}]{lo1995artificial}
+Lo, S.; Chan, H.; Lin J.; Li H.; Freedman, M.; Mun, S.;
+\newblock 1995
+\newblock {\em Artificial Convolutional Neural Network for Medical Image Pattern Recognition}.
+\newblock Elsevier Science Ltd.
+
+\bibitem[\protect\citeauthoryear{Le, Jaitly, Hinton}{2015}]{le2015a}
+Le, Q.; Jaitly, N.; Hinton, G.;
+\newblock 2015
+\newblock {\em A Simple Way to Initialize Recurrent Neural Network of Rectified Linear Units}.
+\newblock {\em arXiv:1504.00941}
+
+\bibitem[\protect\citeauthoryear{Hou, Wu}{2016}]{hou2016fruit}
+Hou, L.; Wu, Q.;
+\newblock 2016
+\newblock {\em Fruit Recognition Based On Convolutional Neural Network}.
+
+\bibitem[\protect\citeauthoryear{Xiao, Rasul, Vollgraf}{2017}]{xiao2017fashionmnist}
+Xiao, H; Rasul, K; Vollgraf, R.
+\newblock 2017
+\newblock {\em Fashion-MNIST}.
+\newblock {Retrieved From: \em https://github.com/zalandoresearch/fashion-mnist} 
+
+\bibitem[\protect\citeauthoryear{Zhang}{2018}]{zhang2018image}
+Dong-Qing Zhang
+\newblock 2018
+\newblock {\em ImageNet Large Scale Visual Recognition Challenge Results}.
+
+
+\end{thebibliography}
