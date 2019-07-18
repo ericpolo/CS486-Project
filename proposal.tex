@@ -10,24 +10,24 @@
 \usepackage{tikz} %Required
 \usepackage{listings}
 \usetikzlibrary{positioning,chains}
-\usepackage{caption}  
+\usepackage{caption}
 \usepackage{graphicx}  %Required
 \frenchspacing  %Required
 \setlength{\pdfpagewidth}{8.5in}  %Required
 \setlength{\pdfpageheight}{11in}  %Required
-\setcounter{secnumdepth}{0}  
+\setcounter{secnumdepth}{0}
 \usepackage{subfigure}
 
 \lstset{
-numberstyle=\small, 
+numberstyle=\small,
 numbers=left,
-numbersep=8pt, 
-frame = single, 
-language=Pascal, 
+numbersep=8pt,
+frame = single,
+language=Pascal,
 framexleftmargin=15pt}
 
 \begin{document}
-% The file aaai.sty is the style file for AAAI Press 
+% The file aaai.sty is the style file for AAAI Press
 % proceedings, working notes, and technical reports.
 %
 \title{CS486 Project: Comparison of Image Recognition Algorithms}
@@ -46,22 +46,20 @@ Waterloo, ON, Canada\\
 %%%%%%%%%. Introduction %%%%%%%%%
 
 \section{Introduction}
+Catalyzed by the creation of ImageNet, the image recognition technology has advanced remarkably in recent years. The image recognition technology is fundamental to many emerging applications such as autonomous vehicles, augmented reality, medical diagnosis, etc. As the technology becomes more mature, the image recognition market is rapidly expanding. According to Markets and Markets \cite{market}, the image recognition market is estimated to grow from 15.95 billion USD in 2016 to 38.92 billion USD in 2021. The fact that the market size would be more than doubled in five years shows the significance and potential of the image recognition technology.
 
-Catalyzed by the creation of ImageNet, the image recognition technology has advanced remarkably in recent years. The image recognition technology is the foundation of many emerging applications such as autonomous vehicles, augmented reality, medical diagnosis, etc. As the technology becomes more mature, the image recognition market is rapidly expanding. According to Markets and Markets (2017), the image recognition market is estimated to grow from 15.95 billion USD in 2016 to 38.92 billion USD in 2021. The fact that the market size would be more than doubled in five years shows the significance and potential of the image recognition technology. 
+Recent rapid development of the image recognition technology is largely thanks to the creation of an image dataset named ImageNet. The idea was conceived by a university professor Fei-fei Li in 2006, after she had realized all of the image datasets at the time were too limited in size and variety. She thought, to make advancements in image recognition, increasing the quality and quantity of training data might help more than improving on the algorithm alone. The ImageNet dataset was born in 2009, and an annual competition using the dataset as training data was started the next year. People quickly realized that their algorithms performed better when trained on ImageNet compared to when trained on traditional image datasets. Since ImageNet contains a large sample of images of a variety of objects, it accurately reflects the performance of algorithms in the real world. In the ImageNet competition, the error rate on the test set has decreased year over year (~\ref{fig:ErrorRate}), demonstrating the steady improvements of image recognition algorithms each year. \cite{Quartz}
 
-
-Recent rapid development of the image recognition technology is largely thanks to the creation of an enormous image dataset named ImageNet. The idea was conceived by a university professor Fei-fei Li in 2006 after she realized the limitation of all the image datasets at the time: they were too limited in size and variety. She thought, to make advancements in image recognition, increasing the quality and quantity of training data might help more than improving on the algorithm alone. The ImageNet dataset was born in 2009, and an annual competition using the dataset as training data was started the next year. People quickly realized that their algorithms performed better when trained on ImageNet compared to when trained on traditional image datasets. Since ImageNet contains a large sample of images of a variety of objects, it accurately reflects the performance of algorithms in the real world. The error rate on the test set has decreased year over year, demonstrating the steady improvements of image recognition algorithms each year. 
 \begin{figure}[h!]
  \centering
   \includegraphics[width=0.5\textwidth]{intro.png}
- \caption{Error Rate of Image Recognition}
+ \caption{Error Rate of Contestants of the ImageNet Competition over the years}
+ \label{fig:ErrorRate}
  \end{figure}
 
-In 2006, a university professor Fei-fei Li recognized the limitations of all the image databases at the time: they had limited number of classes of images and each class has very limited number of images. She recognized that instead of trying to come up with a better algorithm, improving the quality of the training data might help more to make breakthroughs. The ImageNet database was born in 2008, and an annual competition using the database as training data with the same name was started in 2010. Quickly, people discovered that their algorithms performed better when trained with ImageNet compared to traditional image databases. Since ImageNet contains a large sample of images of a variety of objects, it accurately reflects the performance of image recognition algorithms in the real world. The test accuracy of the competition has increased year over year, showing how much image recognition technology advanced.
+ Image recognition is crucial for the development of many other technologies. Autonomous driving is a booming field with heavy reliance on image recognition. Image recognition enables vehicles to understand the surrounding environment in real time, thus allowing decision making and path finding. Developing an accurate and reliable image recognition algorithm for autonomous vehicles is no small feat. In the real world, a vehicle sees all sorts of objects, and the algorithm often has to classify these objects in motion and in real time. Some of the situations a vehicle would encounter cannot be anticipated by developers in a lab. For example, Google’s self-driving car encountered possibly the weirdest road situation ever; it was stopped by a lady in a wheelchair chasing a bird on the road. \cite{birdchasing} Hence, accurate image recognition software that can identify all common objects in real time is necessary for the development of autonomous vehicles. Another field that has been gaining traction over recent years is augmented reality. Augmented reality needs quick and accurate image recognition because it superimposes information or visuals on the surroundings that users perceive. Augmented Reality has a broad range of applications including entertainment, medical applications, and military navigation and targeting. \cite{ar}
 
-The most notable advancement in image recognition over recent years is Deep Convolutional Neural Network, an algorithm devised by … used to enter the ImageNet competition in 2012. It performed marginally better than other algorithms...
-
-Another field that has been gaining traction over recent years is augmented reality. Augmented reality superimposes information or visuals on the surroundings that users perceive. It has applications in medical visualization, maintenance and repair, annotation, robot path planning, entertainment, and military aircraft navigation and targeting. Augmented reality relies heavily on image recognition technology.
+ The aim of this project is to analyze the differences between two different image recognition algorithms, Convolutional Neural Network (CNN) and Recurrent Neural Network (RNN). The analysis makes use of the dataset MNIST Fashion. The purpose of this report is to illustrate the advantages and drawbacks of the two algorithms, so a better one can be chosen for image recognition tasks.
 
 %%%%%%%%%. Related Work %%%%%%%%%
 
@@ -80,7 +78,7 @@ Due to fast development of artificial intelligence and neural network,multiple a
 
 The data set we're using is Fashion-MNIST. Fashion-MNIST is a dataset of Zalando's article images, which consists of 60,000 examples and a test set of 10,000 examples(Han Xiao, 2017). Each image is a $28 \times 28$ grayscale image, and each has a label associated from different classes of clothing. This data set is a great selection for image recognition since it differs from MNIST which is too easy and overused and doesn't represent modern computer vision tasks. In addition, Fashion-MNIST contains a large number of training and testing sets and should be able to yield a reasonable result in term of algorithm comparison.
 
-The first algorithm is CNN, which is a fully connected network such that each neuron in one layer is connected to all neurons in the next layer. It simplifies complex patterns derived from training data. CNN has complex architectures and it is usually constructed with four types of layers: convolutional layers, pooling layers, non-linear layers, and fully connected layers (Hijazi et. al. 2015). The purpose of the convolutional layers is generally to extract the features of the input. According to Hijazi(2015), the pooling layers are to reduce distortion and noise that may affect the process of image classification. Non-linear layers relies on activation function to match similar identification in each hidden layer. In the CNN algorithm we used in this project, the activation function used is ReLU. Lastly, the fully connected layer is the final layer that combines all the previous features and determine a target output based on the information (Hijazi et. al., 2015). 
+The first algorithm is CNN, which is a fully connected network such that each neuron in one layer is connected to all neurons in the next layer. It simplifies complex patterns derived from training data. CNN has complex architectures and it is usually constructed with four types of layers: convolutional layers, pooling layers, non-linear layers, and fully connected layers (Hijazi et. al. 2015). The purpose of the convolutional layers is generally to extract the features of the input. According to Hijazi(2015), the pooling layers are to reduce distortion and noise that may affect the process of image classification. Non-linear layers relies on activation function to match similar identification in each hidden layer. In the CNN algorithm we used in this project, the activation function used is ReLU. Lastly, the fully connected layer is the final layer that combines all the previous features and determine a target output based on the information (Hijazi et. al., 2015).
 
 A simple and abstract mathematical formulation of CNN structure can be represented by the following:
 $$x^1\rightarrow w^1 \rightarrow ... \rightarrow x^{L-1} \rightarrow w^{L-1} \rightarrow x^L \rightarrow w^L \rightarrow z$$
@@ -115,9 +113,9 @@ itemc/.style={item,on chain,join}]
  \node[left=1em of chain,scale=2] (eq) {$=$};
  \node[left=2em of eq,item] (AL) {$A$};
  \path (AL.west) ++ (-1em,2em) coordinate (aux);
- \draw[very thick,-latex,rounded corners] (AL.east) -| ++ (1em,2em) -- (aux) 
+ \draw[very thick,-latex,rounded corners] (AL.east) -| ++ (1em,2em) -- (aux)
  |- (AL.west);
- \foreach \X in {0,1,2,t} 
+ \foreach \X in {0,1,2,t}
  {\draw[very thick,-latex] (A\X.north) -- ++ (0,2em)
  node[above,item,fill=gray!10] (h\X) {$h_\X$};
  \draw[very thick,latex-] (A\X.south) -- ++ (0,-2em)
@@ -157,7 +155,7 @@ CUDA: v10.0.130
 cuDNN SDK: v7.6.1.34
 Python: v3.7.3 64bit
 \end{lstlisting}
-For your information, CUDA and cuDNN SDK are softwares required to run TensorFlow with GPU support on Nividia graphic card in Windows 10 testing environment. 
+For your information, CUDA and cuDNN SDK are softwares required to run TensorFlow with GPU support on Nividia graphic card in Windows 10 testing environment.
 \begin{lstlisting}[columns=fullflexible, keepspaces=true, stepnumber=1]
 System: MacOS Mojave version 10.14.4
 CPU: i5-7267u Memory: 8G
