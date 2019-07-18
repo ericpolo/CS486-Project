@@ -79,13 +79,13 @@ All of these paper discuss image classification and they all manage to train the
 
 Due to fast development of artificial intelligence and neural network,multiple algorithms are applied in the field of image recognition. Performance can be different based on various implementation of algorithm and training environment. This project aims to analyze the performance of two different algorithms: Convocational Neural Networks(CNN) and Recurrent Neural Network(RNN).
 
-The data set we're using is Fashion-MNIST. Fashion-MNIST is a dataset of Zalando's article images, which consists of 60,000 examples and a test set of 10,000 examples(Han Xiao, 2017). Each image is a $28 \times 28$ grayscale image, and each has a label associated from different classes of clothing. This data set is a great selection for image recognition since it differs from MNIST which is too easy and overused and doesn't represent modern computer vision tasks. In addition, Fashion-MNIST contains a large number of training and testing sets and should be able to yield a reasonable result in term of algorithm comparison.
+The dataset we're using is Fashion-MNIST. Fashion-MNIST is a dataset of Zalando's article images, which consists of 60,000 examples and a test set of 10,000 examples(Han Xiao, 2017). Each image is a $28 \times 28$ grayscale image, and each has a label associated from different classes of clothing. This dataset is a great selection for image recognition since it differs from MNIST which is too easy and overused and doesn't represent modern computer vision tasks. In addition, Fashion-MNIST contains a large number of training and testing sets and should be able to yield a reasonable result in term of algorithm comparison.
 
-The first algorithm is CNN, which is a fully connected network such that each neuron in one layer is connected to all neurons in the next layer. It simplifies complex patterns derived from training data. CNN has complex architectures and it is usually constructed with four types of layers: convolutional layers, pooling layers, non-linear layers, and fully connected layers (Hijazi et. al. 2015). The purpose of the convolutional layers is generally to extract the features of the input. According to Hijazi, the pooling layers are to reduce distortion and noise that may affect the process of image classification. Non-linear layers relies on activation function to match similar identification in each hidden layer. In the CNN algorithm we used in this project, the activation function used is ReLU. Lastly, the fully connected layer is the final layer that combines all the previous features and determine a target output based on the information (Hijazi et. al., 2015).
+The first algorithm is CNN, which is a fully connected network such that each neuron in one layer is connected to all neurons in the next layer. It simplifies complex patterns derived from training data. CNN has complex architectures and it is usually constructed with four types of layers: convolutional layers, pooling layers, non-linear layers, and fully connected layers (Hijazi et. al. 2015). The purpose of the convolutional layers is generally to extract the features of the input. According to Hijazi, the pooling layers are to reduce distortion and noise that may affect the process of image classification. Non-linear layers rely on activation function to match similar identification in each hidden layer. In the CNN algorithm we used in this project, the activation function used is ReLU. Lastly, the fully connected layer is the final layer that combines all the previous features and determines a target output based on the information (Hijazi et. al., 2015).
 
 A simple and abstract mathematical formulation of CNN structure can be represented by the following:
 $$x^1\rightarrow w^1 \rightarrow ... \rightarrow x^{L-1} \rightarrow w^{L-1} \rightarrow x^L \rightarrow w^L \rightarrow z$$
-This simple formulation demonstrates how CNN proceed forward layer by layer. $x^1$ is the initial input and it goes through process with weight $w^1$. This process will continue until it outputs $x^{L}$. In the CNN algorithm chosen for this paper, it will be using two built-in Conv2D layer provided by Keras (Simonyan, 2015). The first Conv2D layer creates a convolutional kernel with a 3-by-3 kernel size and uses ReLU as the activation function with the input shape matching the Fashion-MNIST dataset. Following the first Conv2D layer, there is another Conv2D layer using ReLU activation function again. Then, the algorithm applies MaxPooling2D to find the max from a non-overlapping 2-by-2 block to filter out noise and distortion in the dataset while maintaining the features. A Dropout layer is used with a rate of 0.25 for the resulting neural network to have better generalization and be less likely affected by data overfitting. Then the algorithm will apply a Dense layer which is also known as a fully connected layer to connect and combine previous features and produce an output. The following is sample code for Convolutional Neural Network obtained from Xiao:
+This simple formulation demonstrates how CNN proceed forward layer by layer. $x^1$ is the initial input and it goes through process with weight $w^1$. This process will continue until it outputs $x^{L}$. In the CNN algorithm chosen for this paper, it will be using two built-in Conv2D layers provided by Keras (Simonyan, 2015). The first Conv2D layer creates a convolutional kernel with a 3-by-3 kernel size and uses ReLU as the activation function with the shape of input matching the Fashion-MNIST dataset. Following the first Conv2D layer, there is another Conv2D layer using ReLU activation function again. Then, the algorithm applies MaxPooling2D to find the max from a non-overlapping 2-by-2 block to filter out noise and distortion in the dataset while maintaining the features. A Dropout layer is used with a rate of 0.25 for the resulting neural network to have better generalization and be less likely affected by data overfitting. Then the algorithm will apply a Dense layer which is also known as a fully connected layer to connect and to combine previous features. and to produce an output. The following is sample code for Convolutional Neural Network obtained from Xiao:
 \begin{lstlisting}[columns=fullflexible, keepspaces=true, stepnumber=1]
 num_classes = 10
 input_shape = (1, img_rows, img_cols)
@@ -101,12 +101,12 @@ model.add(Dropout(0.5))
 model.add(Dense(num_classes, activation='softmax'))
 \end{lstlisting}
 
-CNN is considered as a good choice for image recognition problems in general. It is widely applied in related problems. Also, as stated in related work section, it has several known advantages regarding to image recognition problem, such that the influence of image distortion on prediction result will be avoided. Thus, we will evaluate its performance in this paper.
+CNN is considered as a good choice for image recognition problems in general. It is widely applied in related problems; also, as stated in related work section, it has several known advantages regarding to image recognition problem, such that the influence of image distortion on prediction result will be avoided. Thus, we will evaluate its performance in this paper.
 
 The second algorithm is RNN. RNN uses neural network to map an input sequence to an output sequence. In another word, it is designed to solve problems in term of predicting sequence. RNN is generally a good choice when dealing with classification problem. Since this report is working on image classification, RNN is chosen as one of the algorithm.
 
-Although RNN is usually hard to train, it is able to store information in the form of activation and it is able to learn sequential data. The reason for this is that, after feeding one datapoint, it will generate a state that contains some useful information from this datapoint, and use it as input when feeding the next datapoint. Thus, neural network will understand the sequential relation between datapoints, and generate its output accordingly. \\ 
-Below is a mathematical representation of RNN retrived :
+Although RNN is usually hard to train, it is able to store information in the form of internal states and it is able to learn sequential data. The reason for this is that, after feeding one datapoint, it will generate a state that contains some useful information from this datapoint, and use it as input when feeding the next datapoint. Thus, neural network will understand the sequential relation between datapoints, and generate its output accordingly. \\ 
+Figure below is a mathematical representation of RNN retrived from Marmot \cite{StackExchange} :
 \begin{tikzpicture}[item/.style={circle,draw,thick,align=center},
 itemc/.style={item,on chain,join}]
  \begin{scope}[start chain=going right,nodes=itemc,every
@@ -135,7 +135,7 @@ itemc/.style={item,on chain,join}]
 \captionof{figure}{\textbf{Mathematical Representation of RNN \\}} 
 \endgroup
 \medskip
-In the RNN algorithm chosen for this paper, it will be using one SimpleRNN Layer with 100 hidden units. It selects random normal distribution with standard deviation 0.001 as its initial weight distribution or kernel initializer and identity matrix with gain 1.0 as its recurrent initializer.Then, the algorithm will apply a Dense layer or fully-connected layer with 10 classes and activation function softmax. The following is sample code for Recurrent Neural Network:
+RNN algorithm chosen in this paper will use one SimpleRNN Layer with 100 hidden units. It selects random normal distribution with standard deviation 0.001 as its initial weight distribution or kernel initializer and identity matrix with gain 1.0 as its recurrent initializer. Then, the algorithm will apply a Dense layer or fully-connected layer with 10 classes and activation function softmax. The following is sample code for Recurrent Neural Network:
 
 \begin{lstlisting}[columns=fullflexible, keepspaces=true, stepnumber=1]
 num_classes = 10
@@ -152,11 +152,13 @@ model.add(Activation('softmax'))
 RNN is considered in this paper because of its recurrent feature. RNN is able to discover the internal sequential relation between images. We believe that the history information or state will help us classify current image and improve recognition performance.
 
 Two algorithm can be compared in lots of different aspects. For neural network algorithms, two aspects are relatively important indicators of performance: Accuracy and Resource Usage. For accuracy, this project will test the prediction accuracy using different values of parameters for each algorithm. For example, we will test the influence on accuracy if we change the number of training epochs each algorithm will run in test. Related result will be concluded by comparing two algorithm’s distribution of prediction accuracy. For resource usage, given the same training set and parameters, time efficiency and space efficiency will be considered and compared. For example, we will test the difference of time and memory used by running two algorithms with the same number of epochs.
-We set up two test environments with Windows 10 operating system and MacOS Mojave. To test these two algorithm efficiently, we use TensorFlow with GPU support on Windows 10 and TensorFlow with CPU on MacOS while running python in bash terminal. Following are the configurations of Windows 10 and MacOS system respectively: \\ \\ \\
+
+We set up two test environments with Windows 10 operating system and MacOS Mojave. To test these two algorithm efficiently, we use TensorFlow with GPU support on Windows 10 and TensorFlow with CPU on MacOS while running python in bash terminal. Following are the configurations of Windows 10 and MacOS system respectively:
 \begin{lstlisting}[columns=fullflexible, keepspaces=true, stepnumber=1]
 System: Windows 10
 CPU: i7-6700hq Memory: 8G
-GPU: GTX 960m Memory: 2G
+GPU: GTX 960m 
+Video Memory: 2G
 TensorFlow: tensorflow-gpu v1.14.0
 CUDA: v10.0.130
 cuDNN SDK: v7.6.1.34
@@ -166,9 +168,10 @@ For your information, CUDA and cuDNN SDK are softwares required to run TensorFlo
 \begin{lstlisting}[columns=fullflexible, keepspaces=true, stepnumber=1]
 System: MacOS Mojave version 10.14.4
 CPU: i5-7267u Memory: 8G
-GPU: Intel Iris Plus Graphics 655 Memory: 1536MB
+GPU: Intel Iris Plus Graphics 655 
+Video Memory: 1536MB
 TensorFlow: tensorflow 1.13.1
-Python: 3.7.3 64bit
+Python: v3.7.3 64bit
 \end{lstlisting}
 
 %%%%%%%%%. Result %%%%%%%%%
