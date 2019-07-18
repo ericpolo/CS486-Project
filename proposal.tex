@@ -104,7 +104,8 @@ CNN is considered as a good choice for image recognition problems in general. It
 
 The second algorithm is RNN. RNN uses neural network to map an input sequence to an output sequence. In another word, it is designed to solve problems in term of predicting sequence. RNN is generally a good choice when dealing with classification problem. Since this report is working on image classification, RNN is chosen as one of the algorithm.
 
-Although RNN is usually hard to train, it is able to store information in the form of activation and it is able to learn sequential data. The reason for this is that, after feeding one datapoint, it will generate a state that contains some useful information from this datapoint, and use it as input when feeding the next datapoint. Thus, neural network will understand the sequential relation between datapoints, and generate its output accordingly. Below is a mathematical representation of RNN retrived :
+Although RNN is usually hard to train, it is able to store information in the form of activation and it is able to learn sequential data. The reason for this is that, after feeding one datapoint, it will generate a state that contains some useful information from this datapoint, and use it as input when feeding the next datapoint. Thus, neural network will understand the sequential relation between datapoints, and generate its output accordingly. \\ 
+Below is a mathematical representation of RNN retrived :
 \begin{tikzpicture}[item/.style={circle,draw,thick,align=center},
 itemc/.style={item,on chain,join}]
  \begin{scope}[start chain=going right,nodes=itemc,every
@@ -129,7 +130,10 @@ itemc/.style={item,on chain,join}]
  node[below,item,fill=gray!10] {$x_t$};
  \path (x2) -- (xt) node[midway,scale=2,font=\bfseries] {\dots};
 \end{tikzpicture}
-\captionof{figure}{\textbf{Mathematical Representation of RNN}}
+\begingroup
+\captionof{figure}{\textbf{Mathematical Representation of RNN \\}} 
+\endgroup
+\medskip
 In the RNN algorithm chosen for this paper, it will be using one SimpleRNN Layer with 100 hidden units. It selects random normal distribution with standard deviation 0.001 as its initial weight distribution or kernel initializer and identity matrix with gain 1.0 as its recurrent initializer.Then, the algorithm will apply a Dense layer or fully-connected layer with 10 classes and activation function softmax. The following is sample code for Recurrent Neural Network:
 
 \begin{lstlisting}[columns=fullflexible, keepspaces=true, stepnumber=1]
@@ -147,7 +151,7 @@ model.add(Activation('softmax'))
 RNN is considered in this paper because of its recurrent feature. RNN is able to discover the internal sequential relation between images. We believe that the history information or state will help us classify current image and improve recognition performance.
 
 Two algorithm can be compared in lots of different aspects. For neural network algorithms, two aspects are relatively important indicators of performance: Accuracy and Resource Usage. For accuracy, this project will test the prediction accuracy using different values of parameters for each algorithm. For example, we will test the influence on accuracy if we change the number of training epochs each algorithm will run in test. Related result will be concluded by comparing two algorithm’s distribution of prediction accuracy. For resource usage, given the same training set and parameters, time efficiency and space efficiency will be considered and compared. For example, we will test the difference of time and memory used by running two algorithms with the same number of epochs.
-We set up two test environments with Windows 10 operating system and MacOS Mojave. To test these two algorithm efficiently, we use TensorFlow with GPU support on Windows 10 and TensorFlow with CPU on MacOS while running python in bash terminal. Following are the configurations of Windows 10 and MacOS system respectively:
+We set up two test environments with Windows 10 operating system and MacOS Mojave. To test these two algorithm efficiently, we use TensorFlow with GPU support on Windows 10 and TensorFlow with CPU on MacOS while running python in bash terminal. Following are the configurations of Windows 10 and MacOS system respectively: \\ \\ \\
 \begin{lstlisting}[columns=fullflexible, keepspaces=true, stepnumber=1]
 System: Windows 10
 CPU: i7-6700hq Memory: 8G
