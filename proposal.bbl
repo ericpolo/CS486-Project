@@ -10,7 +10,8 @@ MarketsAndMarkets
 Dachis, A.
 \newblock 2019.
 \newblock {\em Google’s EfficientNet Offers up to a 10x Boost in Image Analysis Efficiency}.
-\newblock {Retrieved From: \em https://www.extremetech.com/computing/292272-googles-efficientnet-offers-up-to-a-10x-boost-in-image-analysis-efficiency} 
+\newblock {Retrieved From: \em https://www.extremetech.com/computing/
+292272-googles-efficientnet-offers-up-to-a-10x-boost-in-image-analysis-efficiency} 
 
 \bibitem[\protect\citeauthoryear{Quartz}{2017}]{quartz2017image}
 Figure 1: Quartz
@@ -18,6 +19,19 @@ Figure 1: Quartz
 \newblock {\em Image Recognition Using Scale Recurrent Neural Network}.
 \newblock {Retrieved From: \em https://arxiv.org/pdf/1803.09218.pdf} 
 \newblock {\em arXiv:1803.09218}
+
+\bibitem[\protect\citeauthoryear{Self-driving cars}{2017}]{birdchasing2017}
+Google's self-driving car avoids hitting woman chasing a bird
+\newblock 2017
+\newblock {Retrieved From: \em https://www.theguardian.com/technology/video/
+2017/mar/16/google-waymo-self-driving-car-video-woman-bird} 
+
+\bibitem[\protect\citeauthoryear{Ronald T. Azuma}{2006}]{ronald2006ar}
+Ronald T. Azuma
+\newblock 2006
+\newblock {\em A Survey of Augmented Reality}.
+\newblock {Retrieved From: \em https://www.mitpressjournals.org/doi/abs/
+10.1162/pres.1997.6.4.355?cookieSet=1} 
 
 \bibitem[\protect\citeauthoryear{Marmot}{2019}]{StackExchange}
 Figure2: Marmot
