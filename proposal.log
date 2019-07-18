@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  18 JUL 2019 16:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  18 JUL 2019 16:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -554,24 +554,21 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
  <./intro.png>] [2]
 
 Package caption Warning: \captionsetup{type*=...} or \captionof
-(caption)                outside box or environment on input line 130.
+(caption)                outside box or environment on input line 132.
 See the caption package documentation for explanation.
 
 
-Underfull \hbox (badness 1888) in paragraph at lines 105--130
+Underfull \hbox (badness 1888) in paragraph at lines 107--132
 \OT1/ptm/m/n/10 neu-ral net-work will un-der-stand the se-quen-tial re-la-tion
  []
 
 
-Overfull \hbox (38.50461pt too wide) in paragraph at lines 105--130
+Overfull \hbox (38.50461pt too wide) in paragraph at lines 107--132
 [] 
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Overfull \hbox (5.38235pt too wide) in paragraph at lines 137--138
+Overfull \hbox (5.38235pt too wide) in paragraph at lines 139--140
 [][][][][][][][][][][] 
  []
 
@@ -625,7 +622,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 37--41
 Here is how much of TeX's memory you used:
  14713 strings out of 492649
  284761 string characters out of 6129622
- 356703 words of memory out of 5000000
+ 355703 words of memory out of 5000000
  18336 multiletter control sequences out of 15000+600000
  16270 words of font info for 31 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -642,7 +639,7 @@ r/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/te
 xlive/2018/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/201
 8/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2018/texmf-di
 st/fonts/type1/urw/times/utmri8a.pfb>
-Output written on proposal.pdf (4 pages, 364563 bytes).
+Output written on proposal.pdf (4 pages, 364752 bytes).
 PDF statistics:
  68 PDF objects out of 1000 (max. 8388607)
  48 compressed objects within 1 object stream
