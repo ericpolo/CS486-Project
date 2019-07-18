@@ -19,6 +19,12 @@ Figure 1: Quartz
 \newblock {Retrieved From: \em https://arxiv.org/pdf/1803.09218.pdf} 
 \newblock {\em arXiv:1803.09218}
 
+\bibitem[\protect\citeauthoryear{Marmot}{2019}]{StackExchange}
+Figure2: Marmot
+\newblock 2019
+\newblock {\em Mathematical Representation of RNN}.
+\newblock {Retrieved From: \em https://tex.stackexchange.com/a/494148} 
+
 \bibitem[\protect\citeauthoryear{Xiao, Rasul, Vollgraf}{2017}]{xiao2017fashion}
 Xiao, H; Rasul, K; Vollgraf, R.
 \newblock 2017.
