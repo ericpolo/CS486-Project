@@ -195,7 +195,23 @@ This result is foreseeable according to the features of each neural network. For
 
 The second important performance indicator is time efficiency. CNN takes $-----$ seconds to be trained with 30 epochs on MacOS environment, and approaximataly $----$ seconds per epoch. Also, with support of Tensorflow GPU, CNN can finish trainning in only 350.45 seconds in total and around 11.67 seconds for each epoch on Windows environment. On the other hand, RNN has significant disadvantage on time efficiency. On MacOS environment, it takes $----$ seconds to run 30 epochs; on Windows environment, it takes 9031.26 seconds to run 30 epochs, which is clearly slower than CNN. To reach a useable accuracy using RNN, we trained it with 200 epochs on MacOS environment, and it takes nearly 18 hours to train, which is significantly inefficient in time scale.
 
-The third performance indicator is space efficiency or memory usage. Since we used Tensorflow with GPU, GPU memory is also recorded during training. Figure 6 and 7 shows the GPU memory usage of both CNN and RNN over time.
+The third performance indicator is space efficiency or memory usage. Before we start analyze, there are three points need to know about Figure 6 and Figure 7 below. First, since we are testing both algorithm using Tensorflow with GPU, GPU memory used is also recorded. Second, to fit GPU memory usage(unit Byte), Avaliable bytes (unit Byte), and percentage of Memory usage(unit 1 percent), data are scaled differently. Detailed information is listed in the legend. Third, since we start monitoring the data before we run the algorithm and end it after the algorithm finishes, there are some useless data at the begin and end of graph. Please treat them as the baseline of device, which is the regular memory usage without running other program. The baseline of memory occupacion is around 48 percent. 
+
+\begin{figure}[h!]
+ \centering
+  \includegraphics[width=0.5\textwidth]{CNN_Memory_Data.jpg}
+ \caption{\textbf{Memory Data While Running CNN}}
+ \end{figure}
+\begin{figure}[h!]
+ \centering
+  \includegraphics[width=0.5\textwidth]{RNN_Memory_Data.jpg}
+ \caption{\textbf{Memory Data While Running CNN}}
+ \end{figure}
+
+Figure 6 shows the memory usage of device while we run CNN or RNN over time. Note that numbers listed below reflects the percentage of total memory which includes all activities runs on computers. As we can observe from the Figure 6 and Figure 7, CNN has a 86.47 percent average memory usage, and it keeps around 86 percent for the most of time. The maximum usage of memory reaches 88.02 percent.On the other hand RNN has a average memory usage 88.36 percent and it keeps around 88 percent for the most of time. The maximum usage of memory reaches 89.37 percent. However, after we runed 14 epochs, avaliable bites reserved for process used to run RNN program has a 7 percent increase. Regarding to the runtime of RNN, this will save memory in long running time. For GPU memory usage of CNN shown in Figure 6,the mean usage is around 101.72MB, and its maximum is around 124.01MB. For GPU memory usage of RNN shown in Figure 7, the mean usage is around 95.64MB, and its maximum is the same as the maximum in CNN cases.
+
+As a conclusion, CNN has a better performance over RNN in all three acpects including test accuracy, time efficiency, and memory usage. Data above shows that CNN will become a better option of neural network algorithm while addressing image recognition problems in the most cases. However,because of the limitation of test device, we believe that on device with better performance, RNN will perform nearly the same as CNN. Thus, in the environment that device performance is comparatively better, RNN could be a backup option.
+
 
 
 %%%%%%%%%. Bibliography %%%%%%%%%
