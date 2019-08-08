@@ -175,19 +175,21 @@ Python: v3.7.3 64bit
 \end{lstlisting}
 
 %%%%%%%%%. Result %%%%%%%%%
-
 \section{Result}
+The first important performance indicator of a nerual network is its test accuracy on test set. We run both algorithms with 30 epochs on both test environments. The graph below shows the change of validation accuracy over time. Test accuracy of CNN finally reaches 0.9274 on Windows environment and $------------$ on MacOS environment  Instead, test accuracy of RNN only reaches 0.5328 on Windows environment and $============$ on MacOS environment. By shown in Figure 3, Figure 4 and data above, we can clearly observe that CNN has significant advantage on accuracy over RNN when we run both algorithms with the same number of epochs. On the other hand, test accuracy of RNN can hardly reaches 0.7335 after running 200 epochs, as shown in the Figure 5.
+
+
 \begin{figure}[h!]
  \centering
   \includegraphics[width=0.5\textwidth]{RNN_CNN_Windows.jpg}
  \caption{\textbf{RNN VS CNN Test Accuracy on Windows OS}}
  \end{figure}
+
 \begin{figure}[h!]
  \centering
   \includegraphics[width=0.5\textwidth]{RNN_200_MacOS.jpg}
  \caption{\textbf{Test accuracy of RNN after running 200 epochs}}
  \end{figure}
-The first important performance indicator of a nerual network is its test accuracy on test set. We run both algorithms with 30 epochs on both test environments. The graph below shows the change of validation accuracy over time. Test accuracy of CNN finally reaches 0.9274 on Windows environment and $------------$ on MacOS environment  Instead, test accuracy of RNN only reaches 0.5328 on Windows environment and $============$ on MacOS environment. By shown in Figure 3, Figure 4 and data above, we can clearly observe that CNN has significant advantage on accuracy over RNN when we run both algorithms with the same number of epochs. On the other hand, test accuracy of RNN can hardly reaches 0.7335 after running 200 epochs, as shown in the Figure 5.
 
 This result is foreseeable according to the features of each neural network. For CNN, the design of CNN algorithm is suitable to run stochastic or random data. Its convolutional layer and MaxPooling layer will extract the maximum of the characteristic of picture and use this information to predict. Also, its several Dense layers largely helped update the neural network after each epochs. This results in a fastly increase of validation accuracy of CNN while the algorithm runs more epoches. However,for RNN, the historical information cannot be clearly utilized since data are shuffled at the first place. This means RNN will lost its advantage on utilizing past information to help current prediction. This results in a frequent fluctuation and slow increase of validation accuracy of RNN while the algorithm runs more epoches. However, after being trained with a significant large number of epochs, RNN can still reach a better test accuracy.
 
