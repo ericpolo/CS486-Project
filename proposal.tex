@@ -177,9 +177,10 @@
 	
 	%%%%%%%%%. Result %%%%%%%%%
 	\section{Result}
-	After running CNN and RNN algorithms on the Fashion-MNIST dataset, we have obtained the following results. This section compares the results obtained for both algorithms in three aspects, test accuracy, time efficiency, and memory usage.
-	
-	The first important performance indicator of a neural network is its test accuracy on unseen data. We run both algorithms with 30 epochs on both test environments. Figure~\ref{fig:test_win10} shows the change of validation accuracy over 30 epochs. Test accuracy of CNN eventually reaches $92.74\%$ on Windows 10 and $93.03\%$ on MacOS.  However, test accuracy of RNN only reaches $53.28\%$ on Windows 10 and $60.83\%$ on MacOS. As shown in Figure~\ref{fig:test_win10} and Figure~\ref{fig:test_macos}, CNN has significant advantage on accuracy over RNN when trained with the same number of epochs. Test accuracy of RNN only reaches $73.35\%$ even after running $200$ epochs, as shown in the Figure~\ref{fig:epoch}.
+
+After running CNN and RNN algorithms on the Fashion-MNIST dataset, we have obtained the following results. This section compares the results obtained for both algorithms in three aspects, test accuracy, time efficiency, and memory usage.
+
+The first important performance indicator of a neural network is its test accuracy on unseen data. We run both algorithms with 30 epochs on both test environments. Figure~\ref{fig:test_win10} shows the change of validation accuracy over 30 epochs. Test accuracy of CNN eventually reaches $92.74\%$ on Windows 10 and $93.03\%$ on MacOS.  However, test accuracy of RNN only reaches $53.28\%$ on Windows 10 and $60.83\%$ on MacOS. As shown in Figure~\ref{fig:test_win10} and Figure~\ref{fig:test_macos}, CNN has significant advantage on accuracy over RNN when trained with the same number of epochs. Test accuracy of RNN only reaches $73.35\%$ even after running $200$ epochs, as shown in the Figure~\ref{fig:epoch}.
 	
 	\begin{figure}[h!]
 		\centering
@@ -211,13 +212,13 @@
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=0.5\textwidth]{CNN_Memory_Data.jpg}
-		\caption{\textbf{Memory Usage While training CNN}}
+		\caption{\textbf{Memory Usage while Training CNN}}
 		\label{fig:cnn_mem}
 	\end{figure}
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=0.5\textwidth]{RNN_Memory_Data.jpg}
-		\caption{\textbf{Memory Data While Training RNN}}
+		\caption{\textbf{Memory Data while Training RNN}}
 		\label{fig:rnn_mem}
 	\end{figure}
 	
